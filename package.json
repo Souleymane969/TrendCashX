@@ -1,0 +1,11 @@
+json
+{
+  "name": "trendcashx",
+  "version": "1.0.0",
+  "description": "TrendCashX - Une plateforme interactive pour suivre et partager les tendances.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {}
+}
