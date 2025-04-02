@@ -4,23 +4,43 @@ html
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
     <title>TrendCashX</title>
-    <link rel="manifest" href="/public/manifest.json">
+    
+    <!-- Lien vers le fichier manifest.json -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Lien vers une icône (assurez-vous d'avoir un logo dans /public/icons/) -->
+    <link rel="icon" type="image/png" href="icons/icon-192x192.png">
+
+    <!-- CSS de base -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+            margin-top: 50px;
+        }
+    </style>
+
+    <!-- Enregistrement du Service Worker -->
     <script>
-        if ("serviceWorker" in navigator) {
-            navigator.serviceWorker.register("/public/service-worker.js")
-                .then(() => console.log("Service Worker registered"))
-                .catch((error) => console.log("Service Worker registration failed:", error));
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js')
+                .then(() => console.log('Service Worker enregistré !'))
+.catch(error => console.log('Service Worker erreur :', error));
         }
     </script>
 </head>
+
+<body>
     <h1>Bienvenue sur TrendCashX</h1>
-html
-<script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/service-worker.js')
-      .then(registration => {
-        console.log("Service Worker enregistré avec succès :", registration);
-      })
+    <p>Votre plateforme de récompenses et de e-commerce.</p>
+    <p>Ajoutez cette page à votre écran d’accueil pour une meilleure expérience.</p>
 </body>
 </html>
