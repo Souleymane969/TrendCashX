@@ -4,45 +4,34 @@ html
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#ffffff">
     <title>TrendCashX</title>
-    
-    <!-- Lien vers le fichier manifest.json -->
+
+    <!-- Lien vers le manifest.json pour la PWA -->
     <link rel="manifest" href="manifest.json">
 
-    <!-- Lien vers une icône (assurez-vous d'avoir un logo dans /public/icons/) -->
+    <!-- Icône de l'application -->
     <link rel="icon" type="image/png" href="icons/icon-192x192.png">
 
     <!-- CSS de base -->
     <style>
-        <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
-   <script>eruda.init();</script>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        h1 {
-            color: #333;
-            margin-top: 50px;
+            margin: 20px;
         }
     </style>
-
-    <!-- Enregistrement du Service Worker -->
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('service-worker.js')
-                .then(() => console.log('Service Worker enregistré !'))
-.catch(error => console.log('Service Worker erreur :', error));
-        }
-    </script>
 </head>
-
 <body>
+
     <h1>Bienvenue sur TrendCashX</h1>
     <p>Votre plateforme de récompenses et de e-commerce.</p>
     <p>Ajoutez cette page à votre écran d’accueil pour une meilleure expérience.</p>
+
+    <!-- Ajout d'Eruda pour l'inspecteur mobile -->
+    <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+    <script>
+        eruda.init();
+    </script>
+
 </body>
 </html>
