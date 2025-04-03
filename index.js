@@ -1,6 +1,9 @@
-javascript
-console.log("Index.js
-chargé !");           
+```javascript
+import { auth, db } from "./firebase.js"; 
+
+console.log("Index.js chargé !");
+console.log("Firebase:", auth);
+console.log("Firestore:", db);           
 //  Importation des modules Firebase
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getAuth } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
