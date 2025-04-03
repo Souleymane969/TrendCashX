@@ -1,4 +1,4 @@
-js
+javascript
 // Importation des modules Firebase
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth"; // Pour l'authentification
