@@ -1,13 +1,13 @@
-javascript
+'''javascript
 console.log("Firebase.js chargé !");
+// Importation des modules Firebase
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
 
-//Importation des modules Firebase
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js"; import { getAuth } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
-import { getFirestore } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
-
-//Configuration Firebase
+// Configuration Firebase
 const firebaseConfig = {
-  apiKey: "AlzaSyCG1Pn09UgfOgxGknitJTdZCcI70YbhSEk",
+  apiKey: "TA_CLE_API",
   authDomain: "trendcashx.firebaseapp.com",
   projectId: "trendcashx",
   storageBucket: "trendcashx.appspot.com",
@@ -16,10 +16,12 @@ const firebaseConfig = {
   measurementId: "G-B0SN3CN30Z"
 };
 
-//Initialisation de Firebase
+// Initialisation de Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
+
+console.log("Firebase chargé avec succès !");
 
 export { auth, db };
 ```
