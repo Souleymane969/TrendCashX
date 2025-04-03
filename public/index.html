@@ -1,4 +1,4 @@
-html
+```html
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -6,7 +6,7 @@ html
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TrendCashX</title>
 
-    <!-- Lien vers le manifest.json pour la PWA -->
+    <!-- Lien vers le fichier manifest.json -->
     <link rel="manifest" href="manifest.json">
 
     <!-- Icône de l'application -->
@@ -21,20 +21,22 @@ html
         }
     </style>
 
-    <!-- Ajout de Firebase -->
+    <!-- Importation de Firebase -->
     <script type="module" src="./firebase.js"></script>
+
 </head>
 <body>
+
     <h1>Bienvenue sur TrendCashX</h1>
     <p>Votre plateforme de récompenses et de e-commerce.</p>
     <p>Ajoutez cette page à votre écran d’accueil pour une meilleure expérience.</p>
 
-    <!-- Ajout d’Eruda pour l’inspecteur mobile -->
+    <!-- Ajout de Eruda pour l’inspecteur mobile -->
     <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
-    <script>eruda.init();</script>
- <!-- Vérification de Firebase -->
     <script>
-        console.log("Firebase Apps:", firebase.apps);
+        eruda.init();
     </script>
+
 </body>
 </html>
+```
