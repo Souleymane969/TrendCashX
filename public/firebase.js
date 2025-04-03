@@ -1,4 +1,4 @@
-javascript
+'''javascript
 console.log("Firebase.js
 chargé !");           
 // Importation des modules Firebase depuis une URL correcte
