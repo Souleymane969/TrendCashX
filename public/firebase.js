@@ -8,7 +8,7 @@ import { getFirestore } from "https://www.gstatic.com/firebasejs/10.11.1/firebas
 // Configuration Firebase
 const firebaseConfig = {
   apiKey: "AlzaSyCG1Pn09Ugf0xGknitJTdZCcI70YbhSEk",
-  authDomain: "trendcashx.firebasestorage.com",
+  authDomain: "trendcashx.firebaseapp.com",
   projectId: "trendcashx",
   storageBucket: "trendcashx.firebasestorage.app",
   messagingSenderId: "198131315912",
