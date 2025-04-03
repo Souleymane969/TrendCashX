@@ -1,4 +1,6 @@
 javascript
+console.log("Firebase.js
+chargé !");           
 // Importation des modules Firebase depuis une URL correcte
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
 import { getAuth } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
