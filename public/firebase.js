@@ -6,7 +6,7 @@ import { getFirestore } from "firebase/firestore"; // Pour la base de données
 
 // Configuration Firebase
 const firebaseConfig = {
-  apiKey: "AlzaSyCG1Pn09UgxGknitJTdZCcl70YbhSEk",
+  apiKey: "AlzaSyCG1Pn09Ugf0gxGknitJTdZCcl70YbhSEk",
   authDomain: "trendcashx.firebaseapp.com",
   projectId: "trendcashx",
   storageBucket: "trendcashx.firebasestorage.app",
