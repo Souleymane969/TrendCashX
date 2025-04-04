@@ -23,7 +23,7 @@ const db = getFirestore(app);
 window.firebaseApp = app;
 window.firebaseAuth = auth;
 window.firebaseDB = db;
-[04/04, 22:33] ChatGPT: // Tester l'initialisation dans la console
+// Tester l'initialisation dans la console
 console.log("Firebase App:", window.firebaseApp);
 console.log("Firebase Auth:", window.firebaseAuth);
 console.log("Firebase Firestore:", window.firebaseDB);
