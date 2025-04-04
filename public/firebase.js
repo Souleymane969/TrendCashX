@@ -1,7 +1,7 @@
 // Importation des modules Firebase
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
-import { getAuth } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
 import { getFirestore } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
 
 // Configuration Firebase
 const firebaseConfig = {
@@ -16,10 +16,10 @@ const firebaseConfig = {
 
 // Initialisation de Firebase
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
 
-// Rendre Firebase accessible globalement
-window.firebase = app;
-window.auth = auth;
-window.db = db;
+// Initialisation des services Firebase
+const db = getFirestore(app);
+const auth = getAuth(app);
+
+// Exporte les services pour les utiliser ailleurs
+export { app, db, auth };
