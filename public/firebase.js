@@ -8,7 +8,7 @@ const firebaseConfig = {
   apiKey: "AIzaSyCG1Pn09Ugf0gxGknitJTdZCcI70YbhSEk",
   authDomain: "trendcashx.firebaseapp.com",
   projectId: "trendcashx",
-  storageBucket: "trendcashx.appspot.com",
+  storageBucket: "trendcashx.appspot.com", // Correction ici (avant c'était firebasestorage.app)
   messagingSenderId: "198131315912",
   appId: "1:198131315912:web:d533275cf1c4849f74a1fd",
   measurementId: "G-B0SN3CN30Z"
@@ -19,11 +19,12 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-// Rendre Firebase accessible dans la console
+// Rendre Firebase accessible dans la console pour débogage
 window.firebaseApp = app;
 window.firebaseAuth = auth;
 window.firebaseDB = db;
+
 // Tester l'initialisation dans la console
-console.log("Firebase App:", window.firebaseApp);
-console.log("Firebase Auth:", window.firebaseAuth);
-console.log("Firebase Firestore:", window.firebaseDB);
+ console.log(" Firebase App:", window.firebaseApp);
+console.log(" Firebase Auth:", window.firebaseAuth);
+console.log(" Firebase Firestore:", window.firebaseDB);
