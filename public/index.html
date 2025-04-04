@@ -1,0 +1,36 @@
+html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrendCashX</title>
+
+    <!-- Lien vers le manifest.json pour la PWA -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Icône de l'application -->
+    <link rel="icon" type="image/png" href="icons/icon-192x192.png">
+
+    <!-- CSS de base -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+    </style>
+
+    <!-- Importation de Firebase -->
+    <script type="module" src="/firebase.js"></script>
+</head>
+<body>
+    <h1>Bienvenue sur TrendCashX</h1>
+    <p>Votre plateforme de récompenses et de e-commerce.</p>
+    <p>Ajoutez cette page à votre écran d'accueil pour une meilleure expérience.</p>
+
+    <!-- Ajout d'Eruda pour l'inspecteur mobile -->
+    <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+    <script>eruda.init();</script>
+</body>
+  </html>
