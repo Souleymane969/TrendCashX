@@ -1,5 +1,3 @@
-// index.js
-
 console.log("Script index.js chargé !");
 
 import { firebaseAuth } from "./firebase.js";
