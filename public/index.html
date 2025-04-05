@@ -44,6 +44,26 @@
     <!-- Ajout d'Eruda pour l'inspecteur mobile -->
     <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
     <script>eruda.init();</script>
+<!-- Formulaire d'inscription -->
+<h2>Inscription</h2>
+<form id="signup-form">
+  <input type="email" id="email" placeholder="Email" required />
+  <input type="password" id="password" placeholder="Mot de passe" required />
+  <button type="submit">S'inscrire</button>
+</form>
+<p id="signup-message"></p>
 
+<!--  Formulaire de Connexion (AJOUT ICI) -->
+<h2>Connexion</h2>
+<form id="login-form">
+  <input type="email" id="login-email" placeholder="Email" required />
+  <input type="password" id="login-password" placeholder="Mot de passe" required />
+  <button type="submit">Se connecter</button>
+</form>
+<p id="login-message"></p>
+
+<!-- Scripts Firebase & JS -->
+<script type="module" src="firebase.js"></script>
+<script type="module" src="index.js"></script>
 </body>
 </html>
