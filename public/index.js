@@ -1,3 +1,4 @@
+console.log("Script index.js chargé !");
 import { firebaseAuth } from "./firebase.js";
 import { createUserWithEmailAndPassword } from "https://www.gtatic.com/firebasejs/10.7.1/firebase-auth.js";
 
