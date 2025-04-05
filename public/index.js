@@ -1,8 +1,7 @@
 console.log("Script index.js chargé !");
 
 import { firebaseAuth } from "./firebase.js";
-import { createUserWithEmailAndPassword,
-  signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
 
 const signupForm = document.getElementById("signup-form");
 const signupMessage = document.getElementById("signup-message");
