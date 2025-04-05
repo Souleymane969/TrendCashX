@@ -22,7 +22,7 @@ if (signupForm) {
       console.log("Utilisateur inscrit :", user);
 
     } catch (error) {
- signupMessage.innerText = `Erreur : error.message`;
+ signupMessage.innerText = `Erreur : \`error.message \`;
       signupMessage.style.color = "red";
       console.error("Erreur d'inscription :", error);
     }
