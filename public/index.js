@@ -3,15 +3,19 @@ console.log("Script index.js chargé !");
 import { firebaseAuth } from "./firebase.js";
 import {
   createUserWithEmailAndPassword,
-  signInWithEmailAndPassword
+  signInWithEmailAndPassword,
+  signOut,
 } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
 
-//  Sélection des éléments du DOM
+//  Sélection des éléments
 const signupForm = document.getElementById("signup-form");
 const signupMessage = document.getElementById("signup-message");
 
 const loginForm = document.getElementById("login-form");
 const loginMessage = document.getElementById("login-message");
+
+const logoutButton = document.getElementById("logout-button");
+const logoutMessage = document.getElementById("logout-message");
 
 //  Inscription
 if (signupForm) {
@@ -23,38 +27,59 @@ if (signupForm) {
 
     try {
       const userCredential = await createUserWithEmailAndPassword(firebaseAuth, email, password);
-      const user = userCredential.user;
+ const user = userCredential.user;
 
-      signupMessage.innerText = `Utilisateur inscrit : ${user.email}`;
- signupMessage.style.color = "green";
+      signupMessage.innerText = "Utilisateur inscrit avec succès !";
+      signupMessage.style.color = "green";
       console.log("Utilisateur inscrit :", user);
-     catch (error) 
-      signupMessage.innerText = `Erreur :{error.message}`;
+
+      logoutButton.style.display = "inline-block";
+    } catch (error) {
+      signupMessage.innerText = `Erreur : error.message`;
       signupMessage.style.color = "red";
       console.error("Erreur d'inscription :", error);
-    }
-  });
-}
+    );
+
 
 //  Connexion
-if (loginForm) {
-  loginForm.addEventListener("submit", async (event) => {
+if (loginForm) 
+  loginForm.addEventListener("submit", async (event) => 
     event.preventDefault();
 
     const email = document.getElementById("login-email").value;
     const password = document.getElementById("login-password").value;
 
-    try {
+    try 
       const userCredential = await signInWithEmailAndPassword(firebaseAuth, email, password);
       const user = userCredential.user;
 
-      loginMessage.innerText = `Bienvenue user.email`;
+      loginMessage.innerText = `Bienvenue,{user.email}`;
       loginMessage.style.color = "green";
       console.log("Utilisateur connecté :", user);
-     catch (error) 
-      loginMessage.innerText = `Erreur :{error.message}`;
+
+      logoutButton.style.display = "inline-block";
+    } catch (error) {
+      loginMessage.innerText = `Erreur : ${error.message}`;
       loginMessage.style.color = "red";
       console.error("Erreur de connexion :", error);
+    }
+  });
+}
+
+//  Déconnexion
+if (logoutButton) {
+ logoutButton.addEventListener("click", async () => 
+    try 
+      await signOut(firebaseAuth);
+      logoutMessage.innerText = "Déconnexion réussie.";
+      logoutMessage.style.color = "green";
+      console.log("Utilisateur déconnecté.");
+
+      logoutButton.style.display = "none";
+     catch (error) 
+      logoutMessage.innerText = `Erreur :{error.message}`;
+      logoutMessage.style.color = "red";
+      console.error("Erreur de déconnexion :", error);
     }
   });
 }
