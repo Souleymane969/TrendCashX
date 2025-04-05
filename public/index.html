@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TrendCashX</title>
-
+    
     <!-- Lien vers le manifest.json pour la PWA -->
     <link rel="manifest" href="manifest.json">
-
+    
     <!-- Icône de l'application -->
-    <link rel="icon" type="image/png" href="icons/icon-192x192.png">
-
+    <link rel="icon" type="image/png" href="icone-192x192.png">
+    
     <!-- CSS de base -->
     <style>
         body {
@@ -24,12 +24,24 @@
 
     <h1>Bienvenue sur TrendCashX</h1>
     <p>Votre plateforme de récompenses et de e-commerce.</p>
-    <p>Ajoutez cette page à votre écran d’accueil pour une meilleure expérience.</p>
+    <p>Ajoutez cette page à votre écran d'accueil !</p>
 
-    <!-- Ajout de Firebase -->
- <script type="module" src="./firebase.js"></script>
+    <!-- Formulaire d'inscription -->
+    <h2>Inscription</h2>
+    <form id="signup-form">
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Mot de passe" required>
+        <button type="submit">S'inscrire</button>
+    </form>
+    <p id="signup-message"></p>
 
-    <!-- Ajout d'Eruda pour l’inspecteur mobile -->
+    <!-- Importation de Firebase -->
+    <script type="module" src="firebase.js"></script>
+    
+    <!-- Importation du fichier qui gère l'inscription -->
+    <script type="module" src="index.js"></script>
+
+    <!-- Ajout d'Eruda pour l'inspecteur mobile -->
     <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
     <script>eruda.init();</script>
 
