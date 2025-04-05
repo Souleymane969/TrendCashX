@@ -1,18 +1,42 @@
 console.log("Script index.js chargé !");
 
 import { firebaseAuth } from "./firebase.js";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword
+} from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
 
+//  Sélection des éléments du DOM
 const signupForm = document.getElementById("signup-form");
 const signupMessage = document.getElementById("signup-message");
 
-if (signupForm) {
-  signupForm.addEventListener("submit", async (event) => {
-    event.preventDefault();
-// -------- Connexion --------
 const loginForm = document.getElementById("login-form");
 const loginMessage = document.getElementById("login-message");
 
+//  Inscription
+if (signupForm) {
+  signupForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    try {
+      const userCredential = await createUserWithEmailAndPassword(firebaseAuth, email, password);
+      const user = userCredential.user;
+
+      signupMessage.innerText = `Utilisateur inscrit : ${user.email}`;
+ signupMessage.style.color = "green";
+      console.log("Utilisateur inscrit :", user);
+     catch (error) 
+      signupMessage.innerText = `Erreur :{error.message}`;
+      signupMessage.style.color = "red";
+      console.error("Erreur d'inscription :", error);
+    }
+  });
+}
+
+//  Connexion
 if (loginForm) {
   loginForm.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -23,30 +47,14 @@ if (loginForm) {
     try {
       const userCredential = await signInWithEmailAndPassword(firebaseAuth, email, password);
       const user = userCredential.user;
-      loginMessage.innerText = `Bienvenue user.email `;
+
+      loginMessage.innerText = `Bienvenue user.email`;
       loginMessage.style.color = "green";
       console.log("Utilisateur connecté :", user);
      catch (error) 
-      loginMessage.innerText = `Erreur de connexion :{error.message}`;
- loginMessage.style.color = "red";
+      loginMessage.innerText = `Erreur :{error.message}`;
+      loginMessage.style.color = "red";
       console.error("Erreur de connexion :", error);
-    }
-  });
-}
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-
-    try {
-      const userCredential = await createUserWithEmailAndPassword(firebaseAuth, email, password);
-      const user = userCredential.user;
-
-      signupMessage.innerText = "Utilisateur inscrit avec succès !";
-      signupMessage.style.color = "green";
-      console.log(" Utilisateur inscrit :", user);
-    } catch (error) {
-      signupMessage.innerText = "Erreur : " + error.message;
-      signupMessage.style.color = "red";
-      console.error(" Erreur d'inscription :", error);
     }
   });
 }
