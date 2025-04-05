@@ -1,5 +1,5 @@
 import { firebaseAuth } from "./firebase.js";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword } from "https://www.gtatic.com/firebasejs/10.7.1/firebase-auth.js";
 
 // Sélection du formulaire et des champs
 const signupForm = document.getElementById("signup-form");
