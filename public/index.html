@@ -1,0 +1,78 @@
+html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TrendCashX</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 20px;
+    }
+    input, button {
+      margin: 5px;
+      padding: 8px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Bienvenue sur TrendCashX</h1>
+  <p>Votre plateforme de récompenses et de e-commerce.</p>
+  <p>Ajoutez cette page à votre écran d'accueil !</p>
+
+  <!-- ✅ FORMULAIRE D’INSCRIPTION PAR EMAIL -->
+  <h2>Inscription par Email</h2>
+  <form id="signup-form">
+    <input type="email" id="email" placeholder="Email" required />
+    <input type="password" id="password" placeholder="Mot de passe" required />
+    <button type="submit">S'inscrire</button>
+  </form>
+  <p id="signup-message"></p>
+ <!-- ✅ FORMULAIRE DE CONNEXION PAR EMAIL -->
+  <h2>Connexion par Email</h2>
+  <form id="login-form">
+    <input type="email" id="login-email" placeholder="Email" required />
+    <input type="password" id="login-password" placeholder="Mot de passe" required />
+    <button type="submit">Se connecter</button>
+  </form>
+  <p id="login-message"></p>
+
+  <!-- ✅ BOUTONS DE CONNEXION AVEC RÉSEAUX SOCIAUX -->
+  <h2>Connexion via Réseaux Sociaux</h2>
+  <button id="google-login">Se connecter avec Google</button>
+  <button id="facebook-login">Se connecter avec Facebook</button>
+  <button id="twitter-login">Se connecter avec Twitter</button>
+  <p id="social-message"></p>
+
+  <!-- ✅ CONNEXION PAR TÉLÉPHONE -->
+  <h2>Connexion par Téléphone</h2>
+  <form id="phone-form">
+    <input type="tel" id="phone-number" placeholder="+33612345678" required />
+    <div id="recaptcha-container"></div>
+    <button type="submit">Envoyer le code</button>
+  </form>
+
+  <form id="verify-code-form" style="display:none;">
+    <input type="text" id="verification-code" placeholder="Code reçu par SMS" required />
+    <button type="submit">Vérifier</button>
+  </form>
+  <p id="phone-message"></p>
+
+  <!-- ✅ BOUTON DE DÉCONNEXION -->
+  <button id="logout-button" style="display:none;">Se déconnecter</button>
+ <p id="logout-message"></p>
+
+  <!-- ✅ IMPORTATION DES SCRIPTS -->
+  <script type="module" src="firebase.js"></script>
+  <script type="module" src="index.js"></script>
+
+  <!-- ✅ ERUDA (Outils de debug mobile) -->
+  <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+  <script>eruda.init();</script>
+
+</body>
+</html>
