@@ -7,6 +7,8 @@ import {
   signOut,
 } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
 
+import { signInWithPopup, TwitterAuthProvider }
+  from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 //  Sélection des éléments
 const signupForm = document.getElementById("signup-form");
 const signupMessage = document.getElementById("signup-message");
@@ -45,8 +47,6 @@ if (signupForm) {
 if (loginForm) 
   loginForm.addEventListener("submit", async (event) => 
     event.preventDefault();
-      
-import { signInWithPopup, TwitterAuthProvider } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 
 // Connexion avec Twitter
 const twitterLoginBtn = document.getElementById("twitter-login");
