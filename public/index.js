@@ -132,7 +132,8 @@ if (phoneForm) {
       console.warn("reCAPTCHA expiré");
     }
   });
-
+  
+window.location.href = "dashboard.html";
   phoneForm.addEventListener("submit", async (e) => {
     e.preventDefault();
     const phoneNumber = document.getElementById("phone-number").value;
@@ -178,7 +179,7 @@ if (logoutButton) {
       logoutMessage.style.color = "green";
       logoutButton.style.display = "none";
     } catch (error) {
-[06/04, 21:29] ChatGPT: logoutMessage.innerText = "Erreur : " + error.message;
+ logoutMessage.innerText = "Erreur : " + error.message;
       logoutMessage.style.color = "red";
       console.error("Erreur déconnexion :", error);
     }
