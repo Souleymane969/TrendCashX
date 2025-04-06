@@ -45,7 +45,26 @@ if (signupForm) {
 if (loginForm) 
   loginForm.addEventListener("submit", async (event) => 
     event.preventDefault();
+      
+import { signInWithPopup, TwitterAuthProvider } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 
+// Connexion avec Twitter
+const twitterLoginBtn = document.getElementById("twitter-login");
+
+if (twitterLoginBtn) {
+  twitterLoginBtn.addEventListener("click", async () => {
+    const provider = new TwitterAuthProvider();
+    try {
+      const result = await signInWithPopup(firebaseAuth, provider);
+      const user = result.user;
+      console.log("Connecté avec Twitter :", user);
+      alert(`Bienvenue ${user.displayName || user.email} !`);
+    } catch (error) {
+      console.error("Erreur Twitter Login :", error.message);
+      alert("Erreur : " + error.message);
+    }
+  });
+}
     const email = document.getElementById("login-email").value;
     const password = document.getElementById("login-password").value;
 
