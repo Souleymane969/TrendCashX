@@ -65,6 +65,25 @@ if (twitterLoginBtn) {
     }
   });
 }
+    import { GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
+
+// Connexion avec Google
+const googleLoginBtn = document.getElementById("google-login-btn");
+
+if (googleLoginBtn) {
+  googleLoginBtn.addEventListener("click", async () => {
+    const provider = new GoogleAuthProvider();
+    try {
+      const result = await signInWithPopup(firebaseAuth, provider);
+      const user = result.user;
+      console.log("Connecté avec Google :", user);
+      alert(`Bienvenue ${user.displayName} !`);
+ } catch (error) {
+      console.error("Erreur Google Login :", error);
+      alert("Erreur Google : " + error.message);
+    }
+  });
+}  
     const email = document.getElementById("login-email").value;
     const password = document.getElementById("login-password").value;
 
