@@ -1,85 +1,50 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TrendCashX</title>
-    
-    <!-- Lien vers le manifest.json pour la PWA -->
-    <link rel="manifest" href="manifest.json">
-    
-    <!-- Icône de l'application -->
-    <link rel="icon" type="image/png" href="icone-192x192.png">
-    
-    <!-- CSS de base -->
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 20px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TrendCashX</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 20px;
+    }
+  </style>
 </head>
 <body>
 
-    <h1>Bienvenue sur TrendCashX</h1>
-    <p>Votre plateforme de récompenses et de e-commerce.</p>
-    <p>Ajoutez cette page à votre écran d'accueil !</p>
+  <h1>Bienvenue sur TrendCashX</h1>
+  <p>Votre plateforme de récompenses et de e-commerce.</p>
+  <p>Ajoutez cette page à votre écran d'accueil !</p>
 
-    <!-- Formulaire d'inscription -->
-    <h2>Inscription</h2>
-    <form id="signup-form">
-        <input type="email" id="email" placeholder="Email" required>
-        <input type="password" id="password" placeholder="Mot de passe" required>
-        <button type="submit">S'inscrire</button>
-    </form>
-    <p id="signup-message"></p>
+  <!-- Formulaire d'inscription -->
+  <h2>Inscription</h2>
+  <form id="signup-form">
+    <input type="email" id="email" placeholder="Email" required />
+    <input type="password" id="password" placeholder="Mot de passe" required />
+    <button type="submit">S'inscrire</button>
+  </form>
+  <p id="signup-message"></p>
 
-    <!-- Importation de Firebase -->
-    <script type="module" src="firebase.js"></script>
-    
-    <!-- Importation du fichier qui gère l'inscription -->
-    <script type="module" src="index.js"></script>
+  <!-- Formulaire de connexion -->
+  <h2>Connexion</h2>
+  <form id="login-form">
+    <input type="email" id="login-email" placeholder="Email" required />
+ <input type="password" id="login-password" placeholder="Mot de passe" required />
+    <button type="submit">Se connecter</button>
+  </form>
+  <p id="login-message"></p>
 
-    <!-- Ajout d'Eruda pour l'inspecteur mobile -->
-    <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
-    <script>eruda.init();</script>
-<!-- Formulaire d'inscription -->
-<h2>Inscription</h2>
-<form id="signup-form">
-  <input type="email" id="email" placeholder="Email" required />
-  <input type="password" id="password" placeholder="Mot de passe" required />
-  <button type="submit">S'inscrire</button>
-</form>
-<p id="signup-message"></p>
+  <!-- Connexion avec Twitter -->
+  <button id="twitter-login-btn">Se connecter avec Twitter</button>
 
-<!--  Formulaire de Connexion (AJOUT ICI) -->
-<h2>Connexion</h2>
-<form id="login-form">
-    
-    <h2>Connexion</h2>
-<form id="login-form">
-  <input type="email" id="login-email" placeholder="Email" required />
-  <input type="password" id="login-password" placeholder="Mot de passe" required />
-  <button type="submit">Se connecter</button>
-</form>
+  <!-- Bouton de déconnexion -->
+  <button id="logout-bouton" style="display: none;">Se déconnecter</button>
 
-<!-- Bouton Twitter -->
-<button id="twitter-login-btn">Se connecter avec Twitter</button>
+  <!-- Importation de Firebase et du script -->
+  <script type="module" src="firebase.js"></script>
+  <script type="module" src="index.js"></script>
 
-<p id="login-message"></p>
-    
-  <input type="email" id="login-email" placeholder="Email" required />
-  <input type="password" id="login-password" placeholder="Mot de passe" required />
-  <button type="submit">Se connecter</button>
-</form>
-<p id="login-message"></p>
-<boutton id="logout-bouton" style="display:
-none;">Se déconnecter</boutton><p id="logout-message"></p>
-<button id="twitter-login">Se connecter avec Twitter</button>  
-
-    <!-- Scripts Firebase & JS -->
-<script type="module" src="firebase.js"></script>
-<script type="module" src="index.js"></script>
 </body>
 </html>
