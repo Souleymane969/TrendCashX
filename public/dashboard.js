@@ -126,6 +126,39 @@ uploadPhotoInput.addEventListener("change", async (e) => {
     }
   };
 
+const editForm = document.getElementById("edit-profile-form");
+const updateMessage = document.getElementById("update-message");
+
+if (editForm) {
+ editForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const user = firebaseAuth.currentUser;
+    if (!user) return;
+
+    const uid = user.uid;
+    const docRef = doc(firebaseDB, "Saadia_users", uid);
+
+    const updatedData = {
+      nom: document.getElementById("edit-name").value,
+      prenom: document.getElementById("edit-firstname").value,
+      age: parseInt(document.getElementById("edit-age").value),
+      pays: document.getElementById("edit-country").value,
+      ville: document.getElementById("edit-city").value,
+      photo: document.getElementById("edit-photo").value,
+    };
+
+    try {
+      await setDoc(docRef, updatedData, { merge: true });
+      updateMessage.innerText = "Profil mis à jour avec succès !";
+      updateMessage.style.color = "green";
+    } catch (error) {
+      console.error("Erreur de mise à jour :", error);
+      updateMessage.innerText = "Erreur lors de la mise à jour.";
+      updateMessage.style.color = "red";
+    }
+  });
+} 
+
   if (file) reader.readAsDataURL(file);
 });
 
