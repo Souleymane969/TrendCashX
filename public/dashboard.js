@@ -167,3 +167,51 @@ logoutButton.addEventListener("click", async () => {
   await signOut(firebaseAuth);
   window.location.href = "index.html";
 });
+}
+
+// 🔄 Modification du profil
+const editForm = document.getElementById("edit-profile-form");
+const updateMessage = document.getElementById("update-message");
+
+if (editForm) {
+  editForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const newName = document.getElementById("edit-name").value;
+    const newFirstName = document.getElementById("edit-firstname").value;
+    const newAge = parseInt(document.getElementById("edit-age").value);
+    const newCountry = document.getElementById("edit-country").value;
+    const newCity = document.getElementById("edit-city").value;
+    const newPhoto = document.getElementById("edit-photo").value;
+
+    const user = firebaseAuth.currentUser;
+    if (!user) {
+      updateMessage.innerText = "Utilisateur non connecté.";
+ updateMessage.style.color = "red";
+      return;
+    }
+
+    try {
+      const userRef = doc(firebaseDB, "Saadia_users", user.uid);
+      await setDoc(
+        userRef,
+        {
+          Nom: newName,
+          Prénom: newFirstName,
+          Âge: newAge,
+          Pays: newCountry,
+          Ville: newCity,
+          PhotoURL: newPhoto,
+        },
+        { merge: true }
+      );
+
+      updateMessage.innerText = "Profil mis à jour avec succès ✅";
+      updateMessage.style.color = "green";
+    } catch (error) {
+      console.error("Erreur lors de la mise à jour :", error);
+      updateMessage.innerText = "Erreur lors de la mise à jour ❌";
+      updateMessage.style.color = "red";
+    }
+  });
+}
