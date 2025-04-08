@@ -65,13 +65,21 @@
     <button type="submit">Mettre à jour</button>
   </form>
 
+<h2>Changer ma photo de profil</h2>
+
+<!-- Prévisualisation -->
+<img id="preview" src="" alt="Aperçu" style="max-width: 120px; display: none; margin: 10px auto;" />
+
+<!-- Upload -->
+<input type="file" id="profile-pic" accept="image/*" />
+<button id="upload-btn">Télécharger</button>
+<p id="upload-message"></p>
+
 <!-- 🔼 Upload Photo de Profil -->
 <h3>Mettre à jour la photo de profil</h3>
 <input type="file" id="profile-pic" accept="image/*" />
 <button id="upload-btn">Uploader l'image</button>
 <p id="upload-message"></p>
- 
-  <p id="update-message"></p>
 
   <div class="logout">
     <button id="logout-button">Se déconnecter</button>
