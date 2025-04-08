@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Media</title>
+  <link rel="stylesheet" href="media.css">
+</head>
+<body>
+  <header>
+    <h1>Ma plateforme média</h1>
+  </header>
+
+  <main>
+    <div id="media-container">
+      <!-- Ici on va afficher la vidéo, likes, commentaires et boutons de partage -->
+      <video id="video-player" controls>
+        <source src="lien-de-ta-video.mp4" type="video/mp4">
+      </video>
+
+      <div id="media-actions">
+        <button id="like-btn" onclick="likeVideo('videoId')">Like</button>
+        <p id="like-count">Likes: <span id="like-count-value">0</span></p>
+
+        <div>
+          <input type="text" id="comment-input" placeholder="Écrire un commentaire">
+          <button onclick="postComment('videoId')">Commenter</button>
+        </div>
+        <div id="comments-list"></div>
+
+        <button onclick="saveVideo('videoId')">Sauvegarder cette vidéo</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 TrendCashX</p>
+  </footer>
+
+  <script src="media.js"></script>
+</body>
+</html>
