@@ -42,7 +42,7 @@
 <body>
 
   <h1 id="welcome-text">Bienvenue 👋</h1>
-[07/04, 20:39] ChatGPT: <img id="user-photo" class="hidden" src="#" alt="Photo de profil">
+ <img id="user-photo" class="hidden" src="#" alt="Photo de profil">
   <p id="user-email"></p>
   <p id="user-name"></p>
   <p id="user-country"></p>
@@ -64,6 +64,13 @@
     <input type="url" id="edit-photo" placeholder="Lien de la photo (URL)" />
     <button type="submit">Mettre à jour</button>
   </form>
+
+<!-- 🔼 Upload Photo de Profil -->
+<h3>Mettre à jour la photo de profil</h3>
+<input type="file" id="profile-pic" accept="image/*" />
+<button id="upload-btn">Uploader l'image</button>
+<p id="upload-message"></p>
+ 
   <p id="update-message"></p>
 
   <div class="logout">
