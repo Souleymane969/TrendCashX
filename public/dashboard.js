@@ -19,7 +19,60 @@ const updateMessage = document.getElementById("update-message");
 onAuthStateChanged(firebaseAuth, async (user) => {
   if (user) {
     const uid = user.uid;
+    
+import { ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-storage.js";
 
+// Références DOM
+const profilePicInput = document.getElementById("profile-pic");
+const uploadBtn = document.getElementById("upload-btn");
+const uploadMessage = document.getElementById("upload-message");
+const preview = document.getElementById("preview");
+
+profilePicInput.addEventListener("change", () => {
+  const file = profilePicInput.files[0];
+ if (file) {
+    preview.src = URL.createObjectURL(file);
+    preview.style.display = "block";
+  }
+});
+
+uploadBtn.addEventListener("click", async () => {
+  const file = profilePicInput.files[0];
+  if (!file) {
+    uploadMessage.textContent = "Veuillez sélectionner une image.";
+    uploadMessage.style.color = "red";
+    return;
+  }
+
+  // Vérification taille (max 2MB)
+  if (file.size > 2 * 1024 * 1024) {
+    uploadMessage.textContent = "Image trop lourde (max 2 Mo)";
+    uploadMessage.style.color = "red";
+    return;
+  }
+
+  const user = firebaseAuth.currentUser;
+  if (!user) return;
+
+  const fileRef = ref(firebaseStorage, `profile_photos/user.uid/{file.name}`);
+
+  try {
+    await uploadBytes(fileRef, file);
+    const url = await getDownloadURL(fileRef);
+
+    // Met à jour Firestore
+    const userRef = doc(firebaseDB, "Saadia_users", user.uid);
+    await setDoc(userRef, { PhotoURL: url }, { merge: true });
+
+    uploadMessage.textContent = "Image téléchargée avec succès !";
+    uploadMessage.style.color = "green";
+  } catch (err) {
+    console.error("Erreur d’upload :", err);
+    uploadMessage.textContent = "Erreur lors de l'upload.";
+    uploadMessage.style.color = "red";
+  }
+});
+    
     // Affichage de base
     welcomeText.textContent = `Bienvenue, user.displayName || "Utilisateur"¡;
     userEmail.textContent = user.email;
