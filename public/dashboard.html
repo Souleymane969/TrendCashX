@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard - TrendCashX</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    img { width: 100px; border-radius: 50%; margin: 10px 0; }
+    .hidden { display: none; }
+    input, button { margin: 5px 0; padding: 8px; width: 100%; max-width: 300px; }
+  </style>
+</head>
+<body>
+
+  <h1 id="welcome-text">Bienvenue 👋</h1>
+
+  <img id="user-photo" class="hidden" src="" alt="Photo de profil"/>
+  <p id="user-email"></p>
+  <p id="user-name"></p>
+  <p id="user-country"></p>
+  <p id="user-city"></p>
+  <p>Connexions : <span id="login-count"></span></p>
+  <p>Dernière connexion : <span id="last-login"></span></p>
+
+  <button id="logout-button">Se déconnecter</button>
+
+  <hr />
+
+  <!-- 🔔 Hommage -->
+  <h2>🙏 En hommage à Saadia</h2>
+  <p>Ce projet est dédié à la mémoire de Saadia, une lumière éternelle dans nos cœurs. Que chaque utilisateur se connecte avec bienveillance et paix 💫.</p>
+
+  <hr />
+
+  <!-- 🛠️ Modifier profil -->
+  <h2>Modifier mon profil</h2>
+  <form id="edit-profile-form">
+    <input type="text" id="edit-name" placeholder="Nom" required />
+    <input type="text" id="edit-firstname" placeholder="Prénom" required />
+    <input type="number" id="edit-age" placeholder="Âge" required />
+    <input type="text" id="edit-country" placeholder="Pays" required />
+    <input type="text" id="edit-city" placeholder="Ville" required />
+    <input type="url" id="edit-photo" placeholder="Lien de la photo (optionnel)" />
+    <button type="submit">Mettre à jour</button>
+  </form>
+  <p id="update-message"></p>
+
+  <hr />
+
+  <!-- 📤 Upload image -->
+  <h2>Téléverser une photo de profil</h2>
+  <input type="file" id="profile-pic-input" accept="image/*" />
+  <button id="upload-btn">Envoyer l'image</button>
+  <p id="upload-message"></p>
+
+  <!-- 📦 Script Firebase & JS -->
+  <script type="module" src="./dashboard.js"></script>
+</body>
+</html>
