@@ -10,6 +10,33 @@ import {
   signOut
 } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
 
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
+import { doc, getDoc } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js";
+import { firebaseAuth, firebaseDB } from "./firebase.js";
+
+// --- Protection automatique ---
+onAuthStateChanged(firebaseAuth, async (user) => {
+  if (user) {
+    const userRef = doc(firebaseDB, "Saadia_users", user.uid);
+    const userSnap = await getDoc(userRef);
+
+    if (userSnap.exists()) {
+      const data = userSnap.data(); const role = data.Rôle?.trim().toLowerCase();
+
+      if (role !== "admin") {
+        alert("⛔ Accès interdit. Cette page est réservée aux administrateurs.");
+        window.location.href = "index.html";
+      }
+    } else {
+      alert("⚠️ Profil introuvable. Redirection...");
+      window.location.href = "index.html";
+    }
+  } else {
+    alert("🔐 Vous devez être connecté pour accéder à cette page.");
+    window.location.href = "index.html";
+  }
+});
+
 // Références DOM
 const userTableBody = document.getElementById("user-table-body");
 const totalUsers = document.getElementById("total-users");
