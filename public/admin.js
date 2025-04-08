@@ -14,6 +14,16 @@ import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.1/fi
 import { doc, getDoc } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js";
 import { firebaseAuth, firebaseDB } from "./firebase.js";
 
+// -- Affichage message personnalisé
+const welcomeTitle = document.getElementById("admin-welcome");
+const adminInfo = document.getElementById("admin-info");
+
+welcomeTitle.textContent = `👑 Bienvenue, Admin data.Prénom || ""{data.Nom || ""} !`;
+adminInfo.innerHTML = `
+  <strong>Rôle :</strong> data.Rôle <br>
+  <strong>Pays :</strong>{data.Pays || "Inconnu"} <br>
+  <strong>Ville :</strong> ${data.Ville || "Non renseignée"}
+  
 // --- Protection automatique ---
 onAuthStateChanged(firebaseAuth, async (user) => {
   if (user) {
