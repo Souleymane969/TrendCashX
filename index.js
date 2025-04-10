@@ -1,4 +1,3 @@
-```javascript
 import { auth, db } from "./firebase.js"; 
 
 console.log("Index.js chargé !");
