@@ -1,2 +1,2 @@
 # TrendCashX
-TrendCashX – Une plateforme interactive qui permet aux utilisateurs de gagner des récompenses en suivant les tendances et en partageant du contenu. Développée avec Firebase, React et Next.js pour une expérience rapide et fluide.
+TrendCashX est une plateforme innovante dédiée à l’achat, la vente et l’échange de NFTs, conçue pour les créateurs, collectionneurs et passionnés du Web3. Que vous soyez artiste numérique, gamer, ou investisseur crypto, TrendCashX vous offre un écosystème fluide, sécurisé et intuitif pour explorer l’univers des actifs numériques.
