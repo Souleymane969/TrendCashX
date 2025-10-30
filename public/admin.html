@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>TrendCashX - Admin NFT</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🛠️ Tableau de bord Administrateur TrendCashX</h1>
+    <p>Adresse Admin : <span id="adminAddress">---</span></p>
+    <p>Adresse Connectée : <span id="connectedWallet">---</span></p>
+
+    <hr>
+
+    <button onclick="connectAdminWallet()">🔗 Connecter MetaMask</button>
+
+    <h3>📦 Statistiques NFT</h3>
+    <p>Total NFTs Mintés : <span id="totalNFTs">0</span></p>
+    <button onclick="refreshStats()">🔄 Actualiser</button>
+
+    <hr>
+
+    <h3>💰 Gestion Financière</h3>
+    <p>Prix du Mint : <span id="mintPrice">---</span> BNB</p>
+    <input type="number" id="newPrice" placeholder="Nouveau prix en BNB">
+    <button onclick="updateMintPrice()">Modifier le prix</button>
+    <button onclick="withdrawFunds()">💸 Retirer les fonds</button>
+
+    <hr>
+
+    <h3>👥 Utilisateurs</h3>
+    <div id="userList">Chargement...</div>
+  </div>
+
+  <script src="web3.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
