@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TrendCashX NFT | L’art du futur</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">💎 TrendCashX NFT</h1>
+      <ul class="menu">
+        <li><a href="login.html">Connexion</a></li>
+        <li><a href="dashboard.html">Mon espace</a></li>
+        <li><a href="media.html">Galerie NFT</a></li>
+        <li><a href="admin.html">Admin</a></li>
+      </ul>
+      <button onclick="initWeb3()" class="wallet-btn">🔗 Connecter Wallet</button>
+    </nav>
+  </header>
+
+  <main class="hero-section">
+    <h2>🚀 Bienvenue dans TrendCashX</h2>
+    <p>
+      Une plateforme où l’art, la musique et la technologie blockchain fusionnent.  
+      Mints tes créations, découvre des médias uniques et rejoins l’économie NFT ivoirienne 🌍.
+    </p>
+    <button onclick="window.location.href='media.html'" class="cta-btn">
+      🎨 Explorer les NFTs
+    </button>
+    <p id="connectedWallet">Aucun wallet connecté</p>
+  </main>
+
+  <section class="features">
+    <h3>🔥 Fonctionnalités principales</h3>
+    <div class="feature-grid">
+      <div class="feature">
+        <h4>🎵 NFT Music</h4>
+        <p>Mets en avant tes morceaux et rends-les immortels sur la blockchain.</p>
+      </div>
+      <div class="feature">
+        <h4>🎬 NFT Vidéos</h4>
+        <p>Publie des clips, teasers ou performances exclusives sous forme de NFT.</p>
+      </div>
+      <div class="feature">
+        <h4>🖼️ NFT Art</h4>
+        <p>Expose ton art digital et fais-le vivre dans le monde Web3.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 TrendCashX — by Souleymane Sanogo</p>
+  </footer>
+
+  <script src="web3.js"></script>
+  <script>
+    async function checkConnection() {
+      if (typeof window.ethereum !== "undefined") {
+        const accounts = await window.ethereum.request({ method: "eth_accounts" });
+        if (accounts.length > 0) {
+          document.getElementById("connectedWallet").innerText = "✅ Connecté : " + accounts[0];
+        }
+      }
+    }
+
+    window.addEventListener('load', checkConnection);
+  </script>
+</body>
+</html>
