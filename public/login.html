@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TrendCashX | Connexion</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-page">
+
+  <div class="login-container">
+    <h1 class="title">TrendCashX</h1>
+    <p class="subtitle">Connexion Web2 & Web3</p>
+
+    <!-- Connexion classique -->
+    <form id="loginForm" class="login-form">
+      <input type="email" id="email" placeholder="Adresse e-mail" required>
+      <input type="password" id="password" placeholder="Mot de passe" required>
+      <button type="submit" class="btn-primary">Se connecter</button>
+    </form>
+
+    <div class="separator">ou</div>
+
+    <!-- Connexion MetaMask -->
+    <button id="connectWallet" class="btn-wallet">🦊 Se connecter avec MetaMask</button>
+
+    <p class="signup-link">
+      Pas encore de compte ? <a href="signup.html">Créer un compte</a>
+    </p>
+  </div>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+
+  <!-- Web3 -->
+  <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+
+  <!-- Script principal -->
+  <script src="login.js"></script>
+</body>
+</html>
