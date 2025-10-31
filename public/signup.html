@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TrendCashX NFT - Inscription</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="signup-container">
+    <h2>Créer ton compte TrendCashX NFT</h2>
+
+    <!-- Formulaire classique -->
+    <form id="signupForm">
+      <input type="text" id="username" placeholder="Nom d'utilisateur" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="password" id="password" placeholder="Mot de passe" required>
+      <button type="submit" id="signupBtn">S'inscrire</button>
+    </form>
+
+    <hr>
+
+    <!-- Connexion Web3 -->
+    <button id="connectWalletBtn" class="wallet-btn">🔗 Connecter MetaMask</button>
+
+    <p id="walletStatus"></p>
+  </div>
+
+  <script src="firebase.js"></script>
+  <script src="web3.js"></script>
+  <script src="signup.js"></script>
+
+</body>
+</html>
