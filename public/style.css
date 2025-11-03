@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root {
+  --vert: #00A859;
+  --jaune: #FFD700;
+  --blanc: #FFFFFF;
+  --gris-clair: #F5F5F5;
+  --noir: #222;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--blanc);
+  color: var(--noir);
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+}
+
+.logo-section {
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 90px;
+  height: 90px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px var(--vert);
+}
+
+.brand {
+  color: var(--jaune);
+  font-size: 28px;
+  margin-top: 10px;
+  letter-spacing: 1px;
+}
+
+.login-card {
+  background-color: var(--gris-clair);
+  border-radius: 18px;
+  padding: 25px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.login-card h2 {
+  color: var(--vert);
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #555;
+  margin-bottom: 25px;
+  font-size: 15px;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.btn {
+  border: none;
+  border-radius: 10px;
+  padding: 14px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-email {
+  background-color: var(--vert);
+  color: var(--blanc);
+}
+
+.btn-email:hover {
+  background-color: #008f4e;
+}
+
+.btn-wallet {
+  background-color: var(--jaune);
+  color: var(--noir);
+}
+
+.btn-wallet:hover {
+  background-color: #e6c200;
+}
+
+.signup-text {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #333;
+}
+
+.signup-text a {
+  color: var(--vert);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.signup-text a:hover {
+  text-decoration: underline;
+}
