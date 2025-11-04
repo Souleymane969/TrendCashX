@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TrendCashX — Dashboard Web3</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-body">
+  <header class="header">
+    <div class="header-left">
+      <img src="icon-192x192.png" class="logo-small" alt="Logo">
+      <h1 class="brand-title">TrendCashX</h1>
+    </div>
+    <div class="header-right">
+      <div id="walletInfo">Non connecté</div>
+      <button id="connectBtn" class="logout-btn">🔗 Connecter Wallet</button>
+      <button id="logoutBtn" class="logout-btn" style="display:none">🚪 Déconnexion</button>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section>
+      <h2>Mes NFTs</h2>
+      <p id="status">Statut : attente de connexion...</p>
+      <div id="nftGrid" class="nft-grid"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 TrendCashX — Souleymane Sanogo</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+  <script src="dashboard_web3.js"></script>
+</body>
+</html>
